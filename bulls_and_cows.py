@@ -1,6 +1,7 @@
+
 import random
 from tkinter import *
-4
+
 def bulls_and_cows(event):
 
     global count
@@ -26,7 +27,7 @@ def bulls_and_cows(event):
         elif int(player[i]) != computer[i] and int(player[i]) in computer:
             ball+=1
 
-    gameMsg = "%d회차) 컴퓨터[%d%d%d] 플레이어[%s] Strike[%d] Ball[%d]" % (count, computer[0], computer[1], computer[2], player, strike, ball)
+    gameMsg = "%d회차) 플레이어[%s] Strike[%d] Ball[%d]" % (count, player, strike, ball)
     listbox.insert(END, gameMsg)
 
     if strike == 3:
@@ -53,6 +54,7 @@ def rnd():
 def restart():
     global computer, count
     input.config(state=NORMAL)
+    input.delete(0, END)
     listbox.delete(0, END)
     listbox.insert(END, "0~9사이의 서로 다른 숫자 3개를 입력해주세요.")
     computer = rnd()
