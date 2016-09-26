@@ -1,4 +1,3 @@
-
 import random
 from tkinter import *
 
@@ -13,10 +12,12 @@ def bulls_and_cows(event):
 
     if len(player) > 3 or 0 < len(player) < 3:
         listbox.insert(END, "숫자를 총 3개 입력해주세요.")
+        listbox.see(END)
         return
 
     if player[0] == player[1] or player[0] == player[2] or player[1] == player[2]:
         listbox.insert(END, "중복되지 않은 숫자를 입력해주세요.")
+        listbox.see(END)
         return
 
     count += 1
@@ -29,15 +30,18 @@ def bulls_and_cows(event):
 
     gameMsg = "%d회차) 플레이어[%s] Strike[%d] Ball[%d]" % (count, player, strike, ball)
     listbox.insert(END, gameMsg)
+    listbox.see(END)
 
     if strike == 3:
         listbox.insert(END, "%d번 만에 우승하셨습니다!" % count)
+        listbox.see(END)
         input.config(state=DISABLED)
         count=0
         return
 
     if count == 9:
         listbox.insert(END, "패배하셨습니다..")
+        listbox.see(END)
         input.config(state=DISABLED)
         count=0
         return
