@@ -24,9 +24,9 @@ def bulls_and_cows(event):
 
     for i in range(0, 3):
         if int(player[i]) == computer[i]:
-            strike+=1
-        elif int(player[i]) != computer[i] and int(player[i]) in computer:
-            ball+=1
+            strike += 1
+        elif int(player[i]) in computer:
+            ball += 1
 
     gameMsg = "%d회차) 플레이어[%s] Strike[%d] Ball[%d]" % (count, player, strike, ball)
     listbox.insert(END, gameMsg)
