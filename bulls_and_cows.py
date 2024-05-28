@@ -1,6 +1,7 @@
 import random
 from tkinter import *
 
+
 def bulls_and_cows(event):
 
     global count
@@ -46,6 +47,7 @@ def bulls_and_cows(event):
         count=0
         return
 
+
 def rnd():
     computer = []
     while len(computer) != 3:
@@ -55,6 +57,7 @@ def rnd():
 
     return computer
 
+
 def restart():
     global computer, count
     input.config(state=NORMAL)
@@ -62,6 +65,7 @@ def restart():
     listbox.delete(0, END)
     listbox.insert(END, "0~9사이의 서로 다른 숫자 3개를 입력해주세요.")
     computer = rnd()
+
 
 game = Tk()
 game.title("숫자 야구 게임")
